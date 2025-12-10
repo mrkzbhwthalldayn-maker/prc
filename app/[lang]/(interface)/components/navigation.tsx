@@ -122,7 +122,7 @@ const structure: {
     enDesc: "Monitoring performance and evaluating results.",
   },
   {
-    title: "متابعة نظام الجودة",
+    title: "مكتب نظم إدارة الجودة",
     href: "/organizational-structure/quality-management-systems-office",
     description: "الإشراف على تطبيق نظام الجودة ومراقبة الأداء داخل المركز.",
     enTitle: "Quality Assurance",
