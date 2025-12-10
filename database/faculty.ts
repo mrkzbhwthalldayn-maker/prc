@@ -15,8 +15,8 @@ const createFacultyMember = async ({
   picture?: string | null;
   specialization?: string | null;
   cv?: string | null;
-  fullName: string;
-  enName: string;
+  fullName?: string | null;
+  enName?: string | null;
   enSpecialization?: string | null;
 }) => {
   try {
@@ -53,9 +53,9 @@ const updateFacultyMember = async ({
   picture?: string | null;
   specialization?: string | null;
   cv?: string | null;
-  fullName: string;
+  fullName?: string | null;
   id: string;
-  enName: string;
+  enName?: string | null;
   enSpecialization?: string | null;
 }) => {
   try {

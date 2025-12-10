@@ -40,8 +40,8 @@ model Article {
 
 model FacultyMember {
   id               String   @id @default(auto()) @map("_id") @db.ObjectId
-  fullName         String
-  enName           String
+  fullName         String?
+  enName           String?
   specialization   String?
   enSpecialization String?
   picture          String?

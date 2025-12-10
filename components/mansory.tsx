@@ -8,15 +8,15 @@ import LangRenderer from "./lang";
 import { IoCloudDownload } from "react-icons/io5";
 import { useParams } from "next/navigation";
 
-function FacultyGrid({ members }: { members: FacultyMember[] }) {
+function FacultyGrid({ members }: { members: (FacultyMember | undefined)[] }) {
   return (
     <>
       <div className="container mx-auto p-1">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           <>
-            {members.map((member, index) => (
-              <CvCard {...member} key={index} />
-            ))}
+            {members.map((member, index) =>
+              member ? <CvCard key={index} {...member} /> : null
+            )}
           </>
         </div>
       </div>

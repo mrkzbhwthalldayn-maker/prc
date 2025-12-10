@@ -71,6 +71,14 @@ const FacultyMembersCvs = async ({
 
   const currentContent = content[lang];
   const members = await getFacultyMembers({});
+  const memebersByLang = members.map((member) => {
+    if (lang === "ar" && member.fullName && member.fullName.length > 0) {
+      return member;
+    }
+    if (lang === "en" && member.enName && member.enName.length > 0) {
+      return member;
+    }
+  });
 
   return (
     <main className="min-h-screen">
@@ -92,7 +100,7 @@ const FacultyMembersCvs = async ({
         </Breadcrumb>
         <h1 className="text-2xl font-bold my-4">{currentContent.header}</h1>
         <p className="mb-8">{currentContent.description}</p>
-        <FacultyGrid members={members} />
+        <FacultyGrid members={memebersByLang} />
       </div>
     </main>
   );

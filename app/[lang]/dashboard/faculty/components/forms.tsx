@@ -40,7 +40,6 @@ export const CreateFacultyMemberForm = () => {
               name="fullName"
               id="fullName"
               placeholder="أدخل الاسم الكامل"
-              required
             />
           </div>
           <div>
@@ -60,7 +59,6 @@ export const CreateFacultyMemberForm = () => {
               name="specialization"
               id="specialization"
               placeholder="أدخل التخصص"
-              required
             />
           </div>
           <div>
@@ -118,7 +116,7 @@ export const UpdateFacultyMemberForm = ({ user }: { user: FacultyMember }) => {
               type="text"
               name="fullName"
               id="fullName"
-              defaultValue={user.fullName}
+              defaultValue={user?.fullName ?? ""}
               placeholder="أدخل الاسم الكامل"
             />
           </div>
@@ -128,7 +126,7 @@ export const UpdateFacultyMemberForm = ({ user }: { user: FacultyMember }) => {
               type="text"
               name="enName"
               id="enName"
-              defaultValue={user.enName}
+              defaultValue={user?.enName ?? ""}
               placeholder="أدخل الاسم الأجنبي"
             />
           </div>

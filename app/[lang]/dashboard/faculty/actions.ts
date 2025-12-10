@@ -11,11 +11,11 @@ export async function createFacultyMemberAction(
 ) {
   try {
     const schema = z.object({
-      fullName: z.string().min(4, "الاسم الكامل مطلوب"),
+      fullName: z.string().optional().nullable(),
       specialization: z.string().optional().nullable(),
       picture: z.string().optional().nullable(),
       cv: z.string().optional().nullable(),
-      enName: z.string().min(4, "الاسم الكامل مطلوب"),
+      enName: z.string().optional().nullable(),
       enSpecialization: z.string().optional().nullable(),
     });
 
@@ -63,8 +63,8 @@ export async function updateFacultyMemberAction(
   try {
     const schema = z.object({
       id: z.string().min(1, "معرف المستخدم مطلوب"), // "User ID is required"
-      fullName: z.string().min(4, "الاسم الكامل مطلوب"),
-      enName: z.string().min(4, "الاسم الكامل مطلوب"),
+      fullName: z.string().optional().nullable(),
+      enName: z.string().optional().nullable(),
       specialization: z.string().optional().nullable(),
       enSpecialization: z.string().optional().nullable(),
       picture: z.string().optional().nullable(),
