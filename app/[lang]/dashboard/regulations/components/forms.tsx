@@ -81,7 +81,7 @@ export const UpdateForm = ({ form }: { form: Form }) => {
               name="name"
               id="name"
               placeholder="أدخل الاسم"
-              defaultValue={form.name}
+              defaultValue={form?.name ?? ""}
             />
           </div>
           <div>
@@ -91,7 +91,7 @@ export const UpdateForm = ({ form }: { form: Form }) => {
               name="enName"
               id="enName"
               placeholder="أدخل الاسم بالإنجليزية"
-              defaultValue={form.enName}
+              defaultValue={form?.enName ?? ""}
             />
           </div>
           <div className="my-2">

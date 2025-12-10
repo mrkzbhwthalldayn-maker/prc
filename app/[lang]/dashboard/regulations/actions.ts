@@ -7,8 +7,8 @@ export async function createFormAction(
 ) {
   try {
     const schema = z.object({
-      name: z.string().min(1, "Name is required"),
-      enName: z.string().min(1, "English name is required"),
+      name: z.string().optional().nullable(),
+      enName: z.string().optional().nullable(),
       url: z.string().min(1, "URL is required"),
     });
 
@@ -47,8 +47,8 @@ export async function updateFormAction(
   try {
     const schema = z.object({
       id: z.string().min(1, "Form ID is required"),
-      name: z.string().min(1, "Name is required"),
-      enName: z.string().min(1, "English name is required"),
+      name: z.string().optional().nullable(),
+      enName: z.string().optional().nullable(),
       url: z.string().min(1, "URL is required"),
     });
 

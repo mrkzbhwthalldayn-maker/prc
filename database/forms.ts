@@ -8,8 +8,8 @@ const createForm = async ({
   enName,
   url,
 }: {
-  name: string;
-  enName: string;
+  name?: string | null;
+  enName?: string | null;
   url: string;
 }) => {
   try {
@@ -54,8 +54,8 @@ const updateForm = async ({
   url,
 }: {
   id: string;
-  name: string;
-  enName: string;
+  name?: string | null;
+  enName?: string | null;
   url: string;
 }) => {
   try {

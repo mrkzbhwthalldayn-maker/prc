@@ -71,6 +71,15 @@ const ConsultationsPage = async (props: {
   const lang = params.lang;
   const rules = await getForms({});
 
+  const rulesByLang = rules.map((rule) => {
+    if (lang === "en" && rule.enName && rule.enName.length > 0) {
+      return rule;
+    }
+    if (lang === "ar" && rule.name && rule.name.length > 0) {
+      return rule;
+    }
+  });
+
   return (
     <main className="bg-secondary min-h-screen">
       <div className="container pt-6 phone-only:py-2">
@@ -97,17 +106,20 @@ const ConsultationsPage = async (props: {
           {lang === "en" ? "Forms and Regulations" : "نمادج ولوائح"}
         </h1>
         <div className="grid">
-          {rules.map((rule, index) => (
-            <div
-              key={index}
-              className="my-1 transition-all phone-only:w-[90%] mx-auto duration-500 hover:scale-105 bg-card rounded-md flex justify-between items-center w-full py-2 px-4"
-            >
-              <span>{lang === "en" ? rule.enName : rule.name}</span>
-              <CustomLink href={rule.url}>
-                {lang === "en" ? "Download" : "تحميل"}
-              </CustomLink>
-            </div>
-          ))}
+          {rulesByLang.map(
+            (rule, index) =>
+              rule && (
+                <div
+                  key={index}
+                  className="my-1 transition-all phone-only:w-[90%] mx-auto duration-500 hover:scale-105 bg-card rounded-md flex justify-between items-center w-full py-2 px-4"
+                >
+                  <span>{lang === "en" ? rule.enName : rule.name}</span>
+                  <CustomLink href={rule.url}>
+                    {lang === "en" ? "Download" : "تحميل"}
+                  </CustomLink>
+                </div>
+              )
+          )}
         </div>
       </div>
     </main>
