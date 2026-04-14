@@ -11,8 +11,31 @@ import "./css/embla.css";
 const cairo = Cairo({ subsets: ["arabic"] });
 
 export const metadata: Metadata = {
-  appleWebApp: {
-    title: "prc",
+  metadataBase: new URL("https://prc.ly"),
+
+  title: "Libyan Center for Polymer Research | المركز الليبي لبحوث اللدائن",
+
+  description:
+    "Libyan Center for Polymer Research is a leading scientific institution in Libya specializing in polymer and plastic research, innovation, and industrial support.",
+
+  keywords: [
+    "Libyan Center for Polymer Research",
+    "PRC Libya",
+    "Polymer Research Libya",
+    "المركز الليبي لبحوث اللدائن",
+  ],
+
+  openGraph: {
+    title: "Libyan Center for Polymer Research",
+    description:
+      "Polymer research and innovation center in Libya.",
+    siteName: "PRC Libya",
+    type: "website",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
