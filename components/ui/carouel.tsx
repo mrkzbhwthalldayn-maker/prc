@@ -19,7 +19,7 @@ const Carousel = () => {
       alt: "polymer-1.png",
       title: {
         ar: "المركز الليبي لبحوث اللدائن",
-        en: "Libyan Center for Plastic Research",
+        en: "Libyan Center for Polymer Research",
       },
       description: {
         ar: `هو مؤسسة علمية متخصصة في بحوث وتقنية البوليمرات (اللدائن)، تم إنشاؤه بقرار رقم 625 لسنة 1999م كمركز بحثي متخصص يهدف إلى تحقيق نهضة تقنية وعلمية شاملة في مجال تقنية البوليميرات وتطبيقاتها.`,
