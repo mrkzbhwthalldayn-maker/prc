@@ -9,7 +9,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ lang: Locale }>;
+  params: { lang: Locale };
 }): Promise<Metadata> {
   const lang = (await params).lang;
 
