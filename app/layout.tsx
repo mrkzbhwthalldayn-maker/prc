@@ -10,7 +10,7 @@ import "./css/embla.css";
 
 const cairo = Cairo({ subsets: ["arabic"] });
 export const metadata: Metadata = {
-  metadataBase: new URL("https://prc.ly"),
+ metadataBase: new URL("https://www.prc.ly"),
 
   title: "Libyan Polymer Research Center | المركز الليبي لبحوث اللدائن",
 
