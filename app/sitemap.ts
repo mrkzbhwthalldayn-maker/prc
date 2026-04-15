@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
-import { i18n } from "@/i18n-config";
 
 const BASE_URL = "https://prc.ly";
+
+const LOCALES = ["ar", "en"];
 
 const STATIC_ROUTES = [
   "",
@@ -20,7 +21,7 @@ const STATIC_ROUTES = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const urls: MetadataRoute.Sitemap = [];
 
-  for (const locale of i18n.locales) {
+  for (const locale of LOCALES) {
     for (const route of STATIC_ROUTES) {
       const url =
         route === ""
