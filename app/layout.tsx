@@ -5,8 +5,7 @@ import { cn } from "@/lib/utils";
 import ThemeProvider from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 
-import "./css/base.css";
-import "./css/embla.css";
+import "./globals.css";
 
 const cairo = Cairo({ subsets: ["arabic"] });
 
