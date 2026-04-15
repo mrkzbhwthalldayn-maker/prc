@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Cairo } from "next/font/google";
-
 import { cn } from "@/lib/utils";
-import ThemeProvider from "@/components/theme-provider";
-import { Toaster } from "@/components/ui/toaster";
 
 import "./globals.css";
 
@@ -49,15 +46,7 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl" suppressHydrationWarning>
       <body className={cn(cairo.className)}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-          <Toaster />
-        </ThemeProvider>
+        {children}
       </body>
     </html>
   );
