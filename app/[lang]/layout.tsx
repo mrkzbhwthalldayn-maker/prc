@@ -2,10 +2,6 @@ import { i18n, Locale } from "@/i18n-config";
 import { Metadata } from "next";
 import { ReactNode } from "react";
 
-export async function generateStaticParams() {
-  return i18n.locales.map((locale) => ({ lang: locale }));
-}
-
 export async function generateMetadata({
   params,
 }: {
@@ -32,10 +28,6 @@ export async function generateMetadata({
     title: current.title,
     description: current.description,
 
-    verification: {
-      google: "WUvGI62OW9RzSkInnwhFNrcBRV9rhvRsRJf2rBSJWJ0",
-    },
-
     openGraph: {
       title: current.title,
       description: current.description,
@@ -49,9 +41,10 @@ export async function generateMetadata({
       title: current.title,
       description: current.description,
     },
+
+    manifest: `/manifest.${lang}.json`,
   };
 }
-
 export default function Layout({
   children,
 }: {
