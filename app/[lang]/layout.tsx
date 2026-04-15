@@ -1,6 +1,7 @@
 import { i18n, Locale } from "@/i18n-config";
 import { Metadata } from "next";
-import React, { Fragment, ReactNode } from "react";
+import { ReactNode } from "react";
+
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
@@ -11,6 +12,7 @@ export async function generateMetadata({
   params: Promise<{ lang: Locale }>;
 }): Promise<Metadata> {
   const lang = (await params).lang;
+
   const data = {
     ar: {
       title: "المركز الليبي لبحوث اللدائن",
@@ -23,33 +25,40 @@ export async function generateMetadata({
         "The Libyan Polymer Research Center is a research center that works to advance knowledge and innovation in the field of polymers.",
     },
   };
+
   const currentData = data[lang];
- return {
-  title: currentData.title,
-  description: currentData.description,
 
-  verification: {
-    google: "WUvGI62OW9RzSkInnwhFNrcBRV9rhvRsRJf2rBSJWJ0",
-  },
-
-  openGraph: {
+  return {
     title: currentData.title,
     description: currentData.description,
-    siteName: currentData.title,
-    locale: lang === "ar" ? "ar_LY" : "en_US",
-    type: "website",
-  },
 
-  twitter: {
-    card: "summary_large_image",
-    title: currentData.title,
-    description: currentData.description,
-  },
+    verification: {
+      google: "WUvGI62OW9RzSkInnwhFNrcBRV9rhvRsRJf2rBSJWJ0",
+    },
 
-  manifest: `/manifest.${lang}.json`,
-};
-const layout = ({ children }: { children: ReactNode }) => {
-  return <Fragment>{children}</Fragment>;
-};
+    openGraph: {
+      title: currentData.title,
+      description: currentData.description,
+      siteName: currentData.title,
+      locale: lang === "ar" ? "ar_LY" : "en_US",
+      type: "website",
+    },
 
-export default layout;
+    twitter: {
+      card: "summary_large_image",
+      title: currentData.title,
+      description: currentData.description,
+    },
+
+    manifest: `/manifest.${lang}.json`,
+  };
+}
+
+// ✅ هذا هو الصحيح
+export default function Layout({
+  children,
+}: {
+  children: ReactNode;
+}) {
+  return <>{children}</>;
+}
