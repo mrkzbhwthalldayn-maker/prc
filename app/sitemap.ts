@@ -39,8 +39,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         url: `${BASE_URL}${path}`,
 
         // ثابت أفضل للـ SEO بدل new Date() المتغير
-        lastModified: new Date("2026-01-01"),
-
+        lastModified: new Date(),
+       
         changeFrequency: "weekly",
 
         priority: route === "" ? 1 : 0.7,
