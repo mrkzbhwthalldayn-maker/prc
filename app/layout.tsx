@@ -9,7 +9,6 @@ import "./css/embla.css";
 // import PaymentRequiredPage from "./new-page";
 
 const cairo = Cairo({ subsets: ["arabic"] });
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://prc.ly"),
 
