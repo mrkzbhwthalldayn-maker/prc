@@ -16,8 +16,9 @@ const Layout = ({
 
   return (
     <main className="md:flex h-screen">
-      ...
-      {children}
+      <section>Left side</section>
+
+      <section>{children}</section>
     </main>
   );
 };
