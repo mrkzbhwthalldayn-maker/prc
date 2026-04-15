@@ -4,13 +4,14 @@ import { Cairo } from "next/font/google";
 import { cn } from "@/lib/utils";
 import ThemeProvider from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
+
 import "./css/base.css";
 import "./css/embla.css";
-// import PaymentRequiredPage from "./new-page";
 
 const cairo = Cairo({ subsets: ["arabic"] });
+
 export const metadata: Metadata = {
- metadataBase: new URL("https://www.prc.ly"),
+  metadataBase: new URL("https://www.prc.ly"),
 
   title: "Libyan Polymer Research Center | المركز الليبي لبحوث اللدائن",
 
@@ -30,8 +31,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "Libyan Polymer Research Center",
-    description:
-      "Polymer research and innovation center in Libya.",
+    description: "Polymer research and innovation center in Libya.",
     siteName: "PRC Libya",
     type: "website",
   },
@@ -41,18 +41,14 @@ export const metadata: Metadata = {
     follow: true,
   },
 };
-export default async function RootLayout({
+
+export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
-  const lang = "ar";
+}) {
   return (
-    <html
-      lang={lang}
-      dir={lang === "ar" ? "rtl" : "ltr"}
-      suppressHydrationWarning
-    >
+    <html lang="ar" dir="rtl" suppressHydrationWarning>
       <body className={cn(cairo.className)}>
         <ThemeProvider
           attribute="class"
@@ -60,10 +56,9 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* <PaymentRequiredPage /> */}
           {children}
           <Toaster />
-        </ThemeProvider>{" "}
+        </ThemeProvider>
       </body>
     </html>
   );
