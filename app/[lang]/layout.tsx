@@ -9,10 +9,9 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ lang: Locale }>;
+  params: { lang: Locale };
 }): Promise<Metadata> {
-
-  const { lang } = await params;
+  const lang = params.lang;
 
   const data = {
     ar: {
@@ -27,31 +26,29 @@ export async function generateMetadata({
     },
   };
 
-  const currentData = data[lang];
+  const current = data[lang];
 
   return {
-    title: currentData.title,
-    description: currentData.description,
+    title: current.title,
+    description: current.description,
 
     verification: {
       google: "WUvGI62OW9RzSkInnwhFNrcBRV9rhvRsRJf2rBSJWJ0",
     },
 
     openGraph: {
-      title: currentData.title,
-      description: currentData.description,
-      siteName: currentData.title,
+      title: current.title,
+      description: current.description,
+      siteName: current.title,
       locale: lang === "ar" ? "ar_LY" : "en_US",
       type: "website",
     },
 
     twitter: {
       card: "summary_large_image",
-      title: currentData.title,
-      description: currentData.description,
+      title: current.title,
+      description: current.description,
     },
-
-    manifest: `/manifest.${lang}.json`,
   };
 }
 
