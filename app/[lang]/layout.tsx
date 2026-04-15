@@ -24,24 +24,30 @@ export async function generateMetadata({
     },
   };
   const currentData = data[lang];
-  return {
+ return {
+  title: currentData.title,
+  description: currentData.description,
+
+  verification: {
+    google: "WUvGI62OW9RzSkInnwhFNrcBRV9rhvRsRJf2rBSJWJ0",
+  },
+
+  openGraph: {
     title: currentData.title,
     description: currentData.description,
-    openGraph: {
-      title: currentData.title,
-      description: currentData.description,
-      siteName: currentData.title,
-      locale: lang === "ar" ? "ar_LY" : "en_US",
-      type: "website",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: currentData.title,
-      description: currentData.description,
-    },
-    manifest: `/manifest.${lang}.json`, // This gets passed in from the route param
-  };
-}
+    siteName: currentData.title,
+    locale: lang === "ar" ? "ar_LY" : "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: currentData.title,
+    description: currentData.description,
+  },
+
+  manifest: `/manifest.${lang}.json`,
+};
 const layout = ({ children }: { children: ReactNode }) => {
   return <Fragment>{children}</Fragment>;
 };
