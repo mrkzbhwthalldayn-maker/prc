@@ -11,7 +11,7 @@ export async function generateMetadata({
 }: {
   params: { lang: Locale };
 }): Promise<Metadata> {
-  const lang = (await params).lang;
+  const lang = params.lang;
 
   const data = {
     ar: {
@@ -54,7 +54,6 @@ export async function generateMetadata({
   };
 }
 
-// ✅ هذا هو الصحيح
 export default function Layout({
   children,
 }: {
