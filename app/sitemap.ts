@@ -4,11 +4,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: "https://prc.ly/ar",
-      lastModified: new Date(),
+      lastModified: "2026-01-01",
     },
     {
       url: "https://prc.ly/en",
-      lastModified: new Date(),
+      lastModified: "2026-01-01",
     },
   ];
 }
