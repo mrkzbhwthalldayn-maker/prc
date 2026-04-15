@@ -1,5 +1,3 @@
-// app/sitemap.ts
-
 import { MetadataRoute } from "next";
 import { i18n } from "@/i18n-config";
 
@@ -37,23 +35,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
       urls.push({
         url: `${BASE_URL}${path}`,
-
-        // ثابت أفضل للـ SEO بدل new Date() المتغير
         lastModified: new Date(),
-       
         changeFrequency: "weekly",
-
         priority: route === "" ? 1 : 0.7,
-
         alternates: {
           languages: alternates,
         },
       });
     }
   }
-
-  return urls;
-}
 
   return urls;
 }
