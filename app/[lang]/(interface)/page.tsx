@@ -35,29 +35,58 @@ export async function generateMetadata({
   params: Promise<{ lang: Locale }>;
 }): Promise<Metadata> {
   const lang = (await params).lang;
+
   const data = {
     ar: {
       title: "المركز الليبي لبحوث اللدائن",
       description:
-        "المركز الليبي لبحوث اللدائن هو مركز بحثي يعمل على تطوير المعرفة والابتكار في مجال اللدائن والبوليمرات.",
+        "المركز الليبي لبحوث اللدائن هو مركز بحثي متخصص في علوم البوليمرات والتقنيات الحديثة ودعم القطاع الصناعي.",
     },
     en: {
-      title: "Libyan Polymer Research Center",
+      title: "Libyan Center for Polymer Research",
       description:
-        "The Libyan Polymer Research Center is a research center that works to advance knowledge and innovation in the field of polymers.",
+        "The Libyan Center for Polymer Research is a leading research institution in polymer science, innovation, and industrial support.",
     },
   };
+
   const currentData = data[lang];
+
   return {
+    metadataBase: new URL("https://www.prc.ly"),
+
     title: currentData.title,
     description: currentData.description,
+
+    keywords: [
+      "Libyan Center for Polymer Research",
+      "Polymer Research Libya",
+      "Plastic Research Libya",
+      "بحوث اللدائن",
+      "مركز بحوث اللدائن",
+    ],
+
+    alternates: {
+      canonical: `https://www.prc.ly/${lang}`,
+      languages: {
+        "en-US": "https://www.prc.ly/en",
+        "ar-LY": "https://www.prc.ly/ar",
+      },
+    },
+
+    robots: {
+      index: true,
+      follow: true,
+    },
+
     openGraph: {
       title: currentData.title,
       description: currentData.description,
-      siteName: currentData.title,
+      url: `https://www.prc.ly/${lang}`,
+      siteName: "Libyan Center for Polymer Research",
       locale: lang === "ar" ? "ar_LY" : "en_US",
       type: "website",
     },
+
     twitter: {
       card: "summary_large_image",
       title: currentData.title,
