@@ -13,20 +13,24 @@ const cairo = Cairo({ subsets: ["arabic"] });
 export const metadata: Metadata = {
   metadataBase: new URL("https://prc.ly"),
 
-  title: "Libyan Center for Polymer Research | المركز الليبي لبحوث اللدائن",
+  title: "Libyan Polymer Research Center | المركز الليبي لبحوث اللدائن",
 
   description:
-    "Libyan Center for Polymer Research is a leading scientific institution in Libya specializing in polymer and plastic research, innovation, and industrial support.",
+    "Libyan Polymer Research Center is a leading scientific institution in Libya specializing in polymer and plastic research, innovation, and industrial support.",
 
   keywords: [
-    "Libyan Center for Polymer Research",
+    "Libyan Polymer Research Center",
     "PRC Libya",
     "Polymer Research Libya",
     "المركز الليبي لبحوث اللدائن",
   ],
 
+  verification: {
+    google: "WUvGI62OW9RzSkInnwhFNrcBRV9rhvRsRJf2rBSJWJ0",
+  },
+
   openGraph: {
-    title: "Libyan Center for Polymer Research",
+    title: "Libyan Polymer Research Center",
     description:
       "Polymer research and innovation center in Libya.",
     siteName: "PRC Libya",
@@ -38,7 +42,6 @@ export const metadata: Metadata = {
     follow: true,
   },
 };
-
 export default async function RootLayout({
   children,
 }: Readonly<{
