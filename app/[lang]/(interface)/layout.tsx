@@ -1,5 +1,5 @@
 import { Cairo, Outfit } from "next/font/google";
-import "../globals.css";
+import "@/app/globals.css";
 import { cn } from "@/lib/utils";
 
 import Footer from "./components/footer";
